@@ -1,0 +1,44 @@
+overall:
+  default: >
+    The {age_specific_rate_label} of {cancer_name_lower} remained low among those aged {low_age_span}, then increased rapidly and peaked in the {peak_age_group} age group at {peak_rate} {phrase_per_100000};
+    {sex_pattern_text};
+    {area_pattern_text}.
+  sex_specific: >
+    The {age_specific_rate_label} of {cancer_name_lower} remained low among those aged {low_age_span}, then increased rapidly and peaked in the {peak_age_group} age group at {peak_rate} {phrase_per_100000};
+    {area_pattern_text}.
+
+sex:
+  male_higher: >
+    the {age_specific_rate_label} was generally higher in males than in females, peaking in males in the {male_peak_age_group} age group at {male_peak_rate} {phrase_per_100000} and in females in the {female_peak_age_group} age group at {female_peak_rate} {phrase_per_100000}
+  female_higher: >
+    the {age_specific_rate_label} was generally higher in females than in males, peaking in males in the {male_peak_age_group} age group at {male_peak_rate} {phrase_per_100000} and in females in the {female_peak_age_group} age group at {female_peak_rate} {phrase_per_100000}
+  similar: >
+    the {age_specific_rate_label} was similar between males and females, peaking in males in the {male_peak_age_group} age group at {male_peak_rate} {phrase_per_100000} and in females in the {female_peak_age_group} age group at {female_peak_rate} {phrase_per_100000}
+
+area:
+  different_similar: >
+    although age-specific rates differed between urban and rural areas, the overall trends were similar; {area_summary_text}. Specifically, {area_comparison_text}
+  similar: >
+    age-specific rates were similar between urban and rural areas, and the overall trends were similar; {area_summary_text}. Specifically, {area_comparison_text}
+  different_trend: >
+    age-specific rate trends differed between urban and rural areas; {area_summary_text}. Specifically, {area_comparison_text}
+
+area_summary:
+  urban_mostly_higher: >
+    overall, rates were higher in urban areas than in rural areas in most age groups
+  rural_mostly_higher: >
+    overall, rates were higher in rural areas than in urban areas in most age groups
+  mixed: >
+    overall, urban and rural areas alternated in which had higher rates across age groups
+  similar: >
+    overall, rates were similar between urban and rural areas across age groups
+
+area_comparison:
+  urban_higher: >
+    rates were higher in urban areas than in rural areas among those aged {urban_higher_age_spans}
+  rural_higher: >
+    rates were higher in rural areas than in urban areas among those aged {rural_higher_age_spans}
+  both: >
+    rates were higher in urban areas among those aged {urban_higher_age_spans}, and higher in rural areas among those aged {rural_higher_age_spans}
+  similar: >
+    rates were similar between urban and rural areas across age groups

@@ -1,0 +1,59 @@
+event_type:
+  incidence:
+    noun: "发病"
+    case_label: "新发病例"
+    crude_rate_label: "粗发病率"
+    rate_label: "发病率"
+  mortality:
+    noun: "死亡"
+    case_label: "死亡病例"
+    crude_rate_label: "粗死亡率"
+    rate_label: "死亡率"
+
+sex:
+  male: "男性"
+  female: "女性"
+  male_higher: "男性高于女性"
+  female_higher: "女性高于男性"
+  similar: "男性和女性水平接近"
+
+area:
+  urban: "城市"
+  rural: "农村"
+  urban_full: "城市地区"
+  rural_full: "农村地区"
+  urban_higher: "城市地区高于农村地区"
+  rural_higher: "农村地区高于城市地区"
+  similar: "城市地区和农村地区水平接近"
+
+phrase:
+  rank: "顺位"
+  cancer_spectrum: "肿瘤登记地区癌症"
+  all_cancers: "全部癌症"
+  cumulative_0_74: "0-74岁累积"
+  per_100000: "/10万"
+  asr_china: "中标率"
+  asr_world: "世标率"
+  standardized: "标化"
+  area_count_suffix: "个"
+  cancer_registration_areas: "肿瘤登记地区"
+  cancer_registration_area_prefix: false
+  age_specific_prefix: "年龄别"
+  age_unit: "岁"
+  age_and_over_suffix: "岁及以上"
+
+list:
+  comma: "，"
+  ideographic_comma: "、"
+  and: "和"
+  followed_by: "其次是"
+
+punctuation:
+  full_stop: "。"
+  semicolon: "；"
+  paren_open: "（"
+  paren_close: "）"
+
+spectrum:
+  exclude_cancer_pattern: "全部|合计|恶性肿瘤"
+  cancer_name_pattern: "癌$|白血病$|淋巴瘤$|肉瘤$|骨髓瘤$|恶性肿瘤$"

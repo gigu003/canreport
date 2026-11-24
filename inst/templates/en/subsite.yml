@@ -1,0 +1,8 @@
+overall:
+  default: >
+    About {known_prop}% of {cancer_name_lower} cases had complete subsite information.
+    Among these cases, {top_subsite} was the most common subsite, accounting for {top_prop}% of all cases,
+    followed by {other_subsites}, accounting for {other_props}, respectively.
+  single: >
+    About {known_prop}% of {cancer_name_lower} cases had complete subsite information.
+    Among these cases, {top_subsite} was the most common subsite, accounting for {top_prop}% of all cases.

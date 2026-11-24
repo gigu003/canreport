@@ -1,0 +1,29 @@
+overall:
+  default: >
+    {year}年，{cancer_name}位居{area_name}{phrase_cancer_spectrum}{event_noun}谱的第{rank}位。
+    {event_case_label}数为{no_cases}例，占{phrase_all_cancers}{event_noun}的{prop}%。
+    其中，{sex_male}{male_cases}例，{sex_female}{female_cases}例，{area_urban}{urban_cases}例，{area_rural}{rural_cases}例。
+    {cancer_name}的{event_rate_label}为{cr}/10万，中标率为{asr_cn2000}/10万，世标率为{asr_wld85}/10万；
+    {phrase_cumulative_0_74}{event_noun}率为{cumur}%；
+    其中，{sex_male}和{sex_female}{event_rate_label}分别为{male_cr}/10万和{female_cr}/10万，
+    {area_urban_full}和{area_rural_full}{event_rate_label}分别为{urban_cr}/10万和{rural_cr}/10万；
+    中标{event_noun}率呈现{sex_compare_text}以及{area_compare_text}的特点，
+    {sex_ratio_text}，{area_ratio_text}。
+  sex_specific: >
+    {year}年，{cancer_name}位居{area_name}{phrase_cancer_spectrum}{event_noun}谱的第{rank}位。
+    {event_case_label}数为{no_cases}例，占{phrase_all_cancers}{event_noun}的{prop}%。
+    其中，{area_urban}{urban_cases}例，{area_rural}{rural_cases}例。
+    {cancer_name}的{event_rate_label}为{cr}/10万，中标率为{asr_cn2000}/10万，世标率为{asr_wld85}/10万；
+    {phrase_cumulative_0_74}{event_noun}率为{cumur}%；
+    其中，{area_urban_full}和{area_rural_full}{event_rate_label}分别为{urban_cr}/10万和{rural_cr}/10万，
+    中标{event_noun}率呈现{area_compare_text}的特点，{area_ratio_text}。
+
+ratio:
+  sex:
+    male_higher: "{sex_male}中标{event_noun}率是{sex_female}的{sex_ratio}倍"
+    female_higher: "{sex_female}中标{event_noun}率是{sex_male}的{sex_ratio}倍"
+    similar: "{sex_male}和{sex_female}中标{event_noun}率水平接近"
+  area:
+    urban_higher: "{area_urban_full}中标{event_noun}率是{area_rural_full}的{area_ratio}倍"
+    rural_higher: "{area_rural_full}中标{event_noun}率是{area_urban_full}的{area_ratio}倍"
+    similar: "{area_urban_full}和{area_rural_full}中标{event_noun}率水平接近"

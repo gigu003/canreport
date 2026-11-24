@@ -1,0 +1,13 @@
+overall:
+  default: >
+    在{area_scope}中，{cancer_name}{standardized_rate_label}最高的登记处是{total_area_names}，其值分别为{total_rate_values}；
+    从不同性别来看，{sex_male}{cancer_name}{standardized_rate_label}最高的登记处是{male_area_names}，其值分别为{male_rate_values}；
+    {sex_female}{standardized_rate_label}最高的登记处是{female_area_names}，其值分别为{female_rate_values}。
+  default_no_scope: >
+    {cancer_name}{standardized_rate_label}最高的登记处是{total_area_names}，其值分别为{total_rate_values}；
+    从不同性别来看，{sex_male}{cancer_name}{standardized_rate_label}最高的登记处是{male_area_names}，其值分别为{male_rate_values}；
+    {sex_female}{standardized_rate_label}最高的登记处是{female_area_names}，其值分别为{female_rate_values}。
+  sex_specific: >
+    在{area_scope}中，{cancer_name}{standardized_rate_label}最高的登记处是{total_area_names}，其值分别为{total_rate_values}。
+  sex_specific_no_scope: >
+    {cancer_name}{standardized_rate_label}最高的登记处是{total_area_names}，其值分别为{total_rate_values}。

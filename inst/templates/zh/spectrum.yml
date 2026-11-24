@@ -1,0 +1,7 @@
+overall:
+  total: >
+    {year}年，{area_name}肿瘤登记地区恶性肿瘤{event_noun}第1位是{top_cancer}，其次为{other_cancers}，前{n}位恶性肿瘤{event_noun}人数占全部恶性肿瘤的{top_prop}%
+  male: >
+    男性恶性肿瘤{event_noun}第1位的是{top_cancer}，其次为{other_cancers}，男性前{n}位恶性肿瘤{event_noun}人数占全部恶性肿瘤的{top_prop}%
+  female: >
+    女性恶性肿瘤{event_noun}第1位的是{top_cancer}，其次为{other_cancers}，女性前{n}位恶性肿瘤{event_noun}人数占全部恶性肿瘤的{top_prop}%

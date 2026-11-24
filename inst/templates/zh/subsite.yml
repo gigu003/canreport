@@ -1,0 +1,7 @@
+overall:
+  default: >
+    全部{cancer_name}病例中，具有明确亚部位信息的病例占{known_prop}%。
+    其中{top_subsite}病例最多，占{top_prop}%，其次，分别为{other_subsites}，占比分别为{other_props}。
+  single: >
+    全部{cancer_name}病例中，具有明确亚部位信息的病例占{known_prop}%。
+    其中{top_subsite}病例最多，占{top_prop}%。

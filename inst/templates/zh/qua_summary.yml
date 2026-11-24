@@ -1,0 +1,23 @@
+overall:
+  default: >
+    {year}年{area_name}肿瘤登记地区{cancer_name}病理诊断比例（MV%）为{total_mv}%，死亡发病比（M:I）为{total_mi}，仅有死亡医学证明书比例（DCO%）为{total_dco}%。
+    部位不明比例为{total_ub}%，亚部位不明比例为{total_sub}%。
+    男性MV%为{male_mv}%，M:I为{male_mi}，DCO%为{male_dco}%；女性MV%为{female_mv}%，M:I为{female_mi}，DCO%为{female_dco}%。
+    城市地区MV%为{urban_mv}%，M:I为{urban_mi}，DCO%为{urban_dco}%；农村地区MV%为{rural_mv}%，M:I为{rural_mi}，DCO%为{rural_dco}%。
+    {mv_compare_text}，{mi_compare_text}。
+
+comparison:
+  mv:
+    urban_higher: >
+      城市地区MV%高于农村地区
+    rural_higher: >
+      农村地区MV%高于城市地区
+    similar: >
+      城市地区和农村地区MV%接近
+  mi:
+    urban_higher: >
+      M:I高于农村地区
+    rural_higher: >
+      M:I低于农村地区
+    similar: >
+      M:I与农村地区接近

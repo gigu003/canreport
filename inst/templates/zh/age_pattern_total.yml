@@ -1,0 +1,36 @@
+overall:
+  default: >
+    {area_name}肿瘤登记地区{year}年{cancer_name}{age_specific_rate_label}在{low_age_span}年龄组处于较低水平，{rise_start_age}岁及以上年龄组{event_rate_label}明显升高，并于{peak_age_group}年龄组达到峰值，{event_rate_label}为{peak_rate}{phrase_per_100000}。
+    {sex_trend_text}
+
+    按性别比较，{female_higher_age_spans}年龄组女性{event_rate_label}高于男性；{male_higher_age_spans}年龄组则男性{event_rate_label}高于女性。{area_sex_trend_text}
+
+    城乡比较显示，{area_comparison_text}；{area_sex_distribution_text}。
+
+sex_trend:
+  similar: >
+    男性和女性{age_specific_rate_label}随年龄变化趋势基本一致，均自{rise_start_age}岁年龄组开始快速上升，在{peak_age_group}年龄组达到最高水平。
+  different: >
+    男性和女性{age_specific_rate_label}随年龄变化趋势存在一定差异，总体均随年龄增长而升高。
+
+area_sex_trend:
+  similar: >
+    城市和农村登记地区男、女性{age_specific_rate_label}均呈现相似的变化趋势。
+  different: >
+    城市和农村登记地区男、女性{age_specific_rate_label}变化趋势存在一定差异。
+
+area_sex_distribution:
+  similar: >
+    男性和女性{age_specific_rate_label}的城乡分布特征基本一致
+  different: >
+    男性和女性{age_specific_rate_label}的城乡分布特征存在一定差异
+
+area_comparison:
+  urban_slight: >
+    {urban_slight_age_spans}多数年龄组城市地区年龄别率略高于农村地区
+  urban_obvious: >
+    {urban_obvious_age_spans}各年龄组城市地区{event_rate_label}明显高于农村地区
+  rural_higher: >
+    {rural_higher_age_spans}年龄组农村地区年龄别率高于城市地区
+  similar: >
+    城市地区和农村地区各年龄组水平接近

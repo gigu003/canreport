@@ -1,0 +1,44 @@
+overall:
+  default: >
+    {cancer_name}{age_specific_rate_label}在{low_age_span}年龄段处于较低水平，随后快速上升，在{peak_age_group}年龄组达到峰值，{event_rate_label}为{peak_rate}{phrase_per_100000}；
+    {sex_pattern_text}；
+    {area_pattern_text}。
+  sex_specific: >
+    {cancer_name}{age_specific_rate_label}在{low_age_span}年龄段处于较低水平，随后快速上升，在{peak_age_group}年龄组达到峰值，{event_rate_label}为{peak_rate}{phrase_per_100000}；
+    {area_pattern_text}。
+
+sex:
+  male_higher: >
+    {age_specific_rate_label}呈现男性高于女性的特点，男性在{male_peak_age_group}年龄组达到峰值，{event_rate_label}为{male_peak_rate}{phrase_per_100000}，女性在{female_peak_age_group}年龄组达到峰值，{event_rate_label}为{female_peak_rate}{phrase_per_100000}
+  female_higher: >
+    {age_specific_rate_label}呈现女性高于男性的特点，男性在{male_peak_age_group}年龄组达到峰值，{event_rate_label}为{male_peak_rate}{phrase_per_100000}，女性在{female_peak_age_group}年龄组达到峰值，{event_rate_label}为{female_peak_rate}{phrase_per_100000}
+  similar: >
+    {age_specific_rate_label}在男性和女性间水平接近，男性在{male_peak_age_group}年龄组达到峰值，{event_rate_label}为{male_peak_rate}{phrase_per_100000}，女性在{female_peak_age_group}年龄组达到峰值，{event_rate_label}为{female_peak_rate}{phrase_per_100000}
+
+area:
+  different_similar: >
+    城市地区和农村地区年龄别率虽然有一定差异，但是总体趋势类同；{area_summary_text}。其中{area_comparison_text}
+  similar: >
+    城市地区和农村地区年龄别率水平接近，总体趋势类同；{area_summary_text}。其中{area_comparison_text}
+  different_trend: >
+    城市地区和农村地区年龄别率变化趋势存在差异；{area_summary_text}。其中{area_comparison_text}
+
+area_summary:
+  urban_mostly_higher: >
+    总体来看，多数年龄组城市地区高于农村地区
+  rural_mostly_higher: >
+    总体来看，多数年龄组农村地区高于城市地区
+  mixed: >
+    总体来看，城市地区和农村地区在不同年龄组间互有高低
+  similar: >
+    总体来看，不同年龄组城市地区和农村地区水平接近
+
+area_comparison:
+  urban_higher: >
+    城市地区在{urban_higher_age_spans}年龄段高于农村地区
+  rural_higher: >
+    农村地区在{rural_higher_age_spans}年龄段高于城市地区
+  both: >
+    城市地区在{urban_higher_age_spans}年龄段高于农村地区，农村地区在{rural_higher_age_spans}年龄段高于城市地区
+  similar: >
+    不同年龄组城市地区和农村地区水平接近

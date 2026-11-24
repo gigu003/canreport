@@ -1,0 +1,4 @@
+overall:
+  default: >
+    In {report_year}, the population covered by the registration areas included in the annual report analysis was {covered_population}, including {male_population} males and {female_population} females, accounting for approximately {coverage_prop}% of the total population of {area_name}{pop_source_text}.
+    The urban areas covered {urban_population} people, accounting for {urban_prop}% of the registered population, and the rural areas covered {rural_population} people, accounting for {rural_prop}%.

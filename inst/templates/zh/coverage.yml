@@ -1,0 +1,4 @@
+overall:
+  default: >
+    {report_year}年，纳入年报分析的登记地区人口为{covered_population}人，其中男性{male_population}人，女性{female_population}人，约占{data_year}年{area_name}总人口的{coverage_prop}%。
+    按地区划分，城市地区人口为{urban_population}人，占登记地区总人口的{urban_prop}%；农村地区人口为{rural_population}人，占{rural_prop}%。

@@ -1,0 +1,27 @@
+overall:
+  default: >
+    In {year}, {cancer_name_lower} was the {rank_ordinal} {event_rank_phrase} in {phrase_registration_area} {area_name}, China.
+    A total of {no_cases} {event_total_case_phrase} {cancer_name_lower}{event_total_case_suffix}, accounting for {prop}% of all {event_cause_label}.
+    Among them, {male_cases} were {sex_male}, {female_cases} were {sex_female}, {urban_cases} were in {area_urban} and {rural_cases} were in {area_rural}.
+    The {event_crude_rate_label} was {cr} {phrase_per_100000}, with an {phrase_asr_china} of {asr_cn2000} {phrase_per_100000} and an {phrase_asr_world} of {asr_wld85} {phrase_per_100000}, respectively.
+    The {phrase_cumulative_0_74} {event_noun} rate among subjects aged 0 to 74 years was {cumur}%.
+    The {event_noun} rates in males and females were {male_cr} {phrase_per_100000} and {female_cr} {phrase_per_100000}, respectively; and they were {urban_cr} {phrase_per_100000} and {rural_cr} {phrase_per_100000} in urban and rural areas, respectively;
+    subgroup analysis showed that the {phrase_asr_china} {event_noun} rates were {sex_ratio_text}, and they were {area_ratio_text}.
+  sex_specific: >
+    In {year}, {cancer_name_lower} was the {rank_ordinal} {event_rank_phrase} in {phrase_registration_area} {area_name}, China.
+    A total of {no_cases} {event_total_case_phrase} {cancer_name_lower}{event_total_case_suffix}, accounting for {prop}% of all {event_cause_label}.
+    Among them, {urban_cases} were in {area_urban} and {rural_cases} were in {area_rural}.
+    The {event_crude_rate_label} was {cr} {phrase_per_100000}, with an {phrase_asr_china} of {asr_cn2000} {phrase_per_100000} and an {phrase_asr_world} of {asr_wld85} {phrase_per_100000}, respectively.
+    The {phrase_cumulative_0_74} {event_noun} rate among subjects aged 0 to 74 years was {cumur}%.
+    The {event_noun} rates in urban and rural areas were {urban_cr} {phrase_per_100000} and {rural_cr} {phrase_per_100000}, respectively;
+    subgroup analysis showed that the {phrase_asr_china} {event_noun} rates were {area_ratio_text}.
+
+ratio:
+  sex:
+    male_higher: "{sex_ratio} times higher in males than in females"
+    female_higher: "{sex_ratio} times higher in females than in males"
+    similar: "similar between males and females"
+  area:
+    urban_higher: "{area_ratio} times higher in urban areas than in rural areas"
+    rural_higher: "{area_ratio} times higher in rural areas than in urban areas"
+    similar: "similar between urban and rural areas"

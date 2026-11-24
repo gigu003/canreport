@@ -1,0 +1,156 @@
+average_population:
+  title: "年平均人口数"
+  label: "eq-average-population"
+  description: >
+    年平均人口数是计算发病率、死亡率等人群率指标的基本分母，用于近似表示观察期内目标人群的平均暴露人口规模。
+    在肿瘤登记年报中，如无更精确的年中人口资料，通常采用年初和年末人口数的算术平均值作为年平均人口数。
+  equation: >
+    $$
+    P = \frac{P_s + P_e}{2}
+    $$ {#eq-average-population}
+  note: >
+    其中，P 为年平均人口数，P_s 为年初人口数，P_e 为年末人口数。如可获得年中人口数，可优先采用年中人口数作为率的分母。
+  interpretation: >
+    年平均人口数的准确性直接影响率指标的稳定性和可比性，尤其在流动人口较多或人口规模快速变化的地区，应注意人口资料来源和口径的一致性。
+
+crude_rate:
+  title: "粗发病率/粗死亡率"
+  label: "eq-crude-rate"
+  description: >
+    粗率用于描述一定时期内目标人群中新发癌症病例或癌症死亡的发生频率，是反映人群癌症实际疾病负担的基础指标。
+    当事件为新发病例时，该指标为粗发病率；当事件为死亡病例时，该指标为粗死亡率。
+  equation: >
+    $$
+    R = \frac{N}{P} \times 100,000
+    $$ {#eq-crude-rate}
+  note: >
+    其中，R 为粗发病率或粗死亡率，N 为观察期内的新发病例数或死亡数，P 为同期年平均人口数。粗率通常以每10万人口表示。
+  interpretation: >
+    粗率反映目标人群中实际观察到的疾病负担，但受人口年龄结构影响较大。进行不同地区、不同年份或不同人群间比较时，应结合年龄标准化率进行解释。
+
+age_specific_rate:
+  title: "年龄别发病率/死亡率"
+  label: "eq-age-specific-rate"
+  description: >
+    年龄别率用于描述特定年龄组内癌症新发病例或死亡的发生频率，是分析癌症年龄分布特征和识别高风险年龄段的重要指标。
+  equation: >
+    $$
+    R_i = \frac{N_i}{P_i} \times 100,000
+    $$ {#eq-age-specific-rate}
+  note: >
+    其中，R_i 为第 i 个年龄组的年龄别发病率或死亡率，N_i 为该年龄组的新发病例数或死亡数，P_i 为该年龄组同期年平均人口数。
+  interpretation: >
+    年龄别率能够展示癌症风险随年龄变化的模式，也是计算年龄标准化率、累积率和截缩率的基础。
+
+age_standardized_rate:
+  title: "年龄标准化率"
+  label: "eq-age-standardized-rate"
+  description: >
+    年龄标准化率用于消除不同人群年龄结构差异对发病率或死亡率比较的影响，是肿瘤登记报告中进行地区、时间和人群间比较的核心指标。
+    常用标准人口包括中国标准人口和世界标准人口。
+  equation: >
+    $$
+    ASR = \frac{\sum_i R_i W_i}{\sum_i W_i}
+    $$ {#eq-age-standardized-rate}
+  note: >
+    其中，ASR 为年龄标准化发病率或死亡率，R_i 为第 i 个年龄组的年龄别率，W_i 为第 i 个年龄组的标准人口数或标准人口权重。
+  interpretation: >
+    年龄标准化率是用于比较的综合率，不代表目标人群真实观察到的发生水平。描述实际疾病负担时应优先参考粗率和病例数，比较不同人群风险水平时应参考标准化率。
+
+proportion:
+  title: "构成比"
+  label: "eq-proportion"
+  description: >
+    构成比用于描述某一癌种、性别、年龄组或其他分类在全部病例或死亡中的相对组成，是反映癌症谱和死亡谱结构的重要指标。
+  equation: >
+    $$
+    Prop_c = \frac{N_c}{\sum_c N_c} \times 100\%
+    $$ {#eq-proportion}
+  note: >
+    其中，Prop_c 为第 c 类癌症或分类的构成比，N_c 为该类别的病例数或死亡数，\sum_c N_c 为所有类别病例数或死亡数之和。
+  interpretation: >
+    构成比受各类别共同变化影响，不能直接解释为发病或死亡风险。比较癌症构成变化时，应同时关注相应的率指标和人口结构变化。
+
+cumulative_rate:
+  title: "累积率"
+  label: "eq-cumulative-rate"
+  description: >
+    累积率用于描述从出生至某一年龄前发生或死亡于癌症的累积水平。肿瘤登记报告中常计算0至74岁累积发病率或累积死亡率。
+  equation: >
+    $$
+    CR_{0-a} = \sum_i \frac{R_i}{100,000} \times w_i \times 100\%
+    $$ {#eq-cumulative-rate}
+  note: >
+    其中，CR_{0-a} 为0至 a 岁累积率，R_i 为第 i 个年龄组以每10万人口表示的年龄别率，w_i 为该年龄组组距。
+  interpretation: >
+    在各年龄组率较低的情况下，累积率可近似解释为个体从出生至指定年龄前发生或死亡于癌症的概率。累积率不依赖标准人口，适合辅助比较不同人群的累积风险。
+
+truncated_rate:
+  title: "截缩率"
+  label: "eq-truncated-rate"
+  description: >
+    截缩率是在特定年龄范围内计算的年龄标准化率，常用于35至64岁等重点年龄段的癌症发病或死亡水平比较。
+  equation: >
+    $$
+    TR_{a-b} = \frac{\sum_{i=a}^{b} R_i W_i}{\sum_{i=a}^{b} W_i}
+    $$ {#eq-truncated-rate}
+  note: >
+    其中，TR_{a-b} 为 a 至 b 岁年龄范围内的截缩率，R_i 为第 i 个年龄组的年龄别率，W_i 为对应年龄组的标准人口数或标准人口权重。
+  interpretation: >
+    截缩率可减少儿童和高龄人群率不稳定对比较结果的影响，适合用于重点工作年龄段或特定风险年龄段的人群比较。
+
+mi_ratio:
+  title: "死亡发病比"
+  label: "eq-mi-ratio"
+  description: >
+    死亡发病比是同期癌症死亡数与新发病例数的比值，常用于肿瘤登记资料质量评价，也可作为反映癌症预后和诊疗水平的间接指标。
+  equation: >
+    $$
+    M:I = \frac{D}{I}
+    $$ {#eq-mi-ratio}
+  note: >
+    其中，M:I 为死亡发病比，D 为癌症死亡数，I 为癌症新发病例数。
+  interpretation: >
+    M:I 过高可能提示发病登记不完整或病例漏报，过低可能提示死亡资料不完整或编码问题。不同癌种的 M:I 差异较大，解释时应结合癌种预后特点和资料完整性。
+
+mv_percent:
+  title: "病理诊断比例"
+  label: "eq-mv-percent"
+  description: >
+    病理诊断比例是经组织学或细胞学诊断确认的病例占全部登记病例的比例，是评价肿瘤登记资料诊断依据可靠性的重要指标。
+  equation: >
+    $$
+    MV\% = \frac{N_{MV}}{N} \times 100\%
+    $$ {#eq-mv-percent}
+  note: >
+    其中，MV\% 为病理诊断比例，N_{MV} 为经组织学或细胞学确认的病例数，N 为全部登记病例数。
+  interpretation: >
+    MV\% 较高通常提示诊断依据较可靠，但过高也可能提示仅收集医疗机构确诊病例而遗漏临床诊断或死亡补发病例。应结合 DCO%、M:I 和病例来源综合评价。
+
+dco_percent:
+  title: "仅有死亡医学证明书比例"
+  label: "eq-dco-percent"
+  description: >
+    仅有死亡医学证明书比例是仅通过死亡医学证明书发现、缺乏生前发病登记信息的病例占全部登记病例的比例，是评价发病登记完整性的重要质量指标。
+  equation: >
+    $$
+    DCO\% = \frac{N_{DCO}}{N} \times 100\%
+    $$ {#eq-dco-percent}
+  note: >
+    其中，DCO\% 为仅有死亡医学证明书比例，N_{DCO} 为仅由死亡医学证明书发现的病例数，N 为全部登记病例数。
+  interpretation: >
+    DCO\% 较高通常提示发病资料收集不完整或病例追溯不足。较低的 DCO\% 一般提示登记完整性较好，但也应结合死亡资料质量进行判断。
+
+unknown_percent:
+  title: "部位不明比例"
+  label: "eq-unknown-percent"
+  description: >
+    部位不明比例是原发部位不明确或编码为不明部位的病例占全部登记病例的比例，用于评价肿瘤部位编码和诊断信息的完整性。
+  equation: >
+    $$
+    UK\% = \frac{N_{unknown}}{N} \times 100\%
+    $$ {#eq-unknown-percent}
+  note: >
+    其中，UK\% 为部位不明比例，N_{unknown} 为原发部位不明的病例数，N 为全部登记病例数。
+  interpretation: >
+    部位不明比例较高会影响癌症谱分析和部位别率估计，提示病例诊断信息、病案摘录或编码质量需要进一步核查。

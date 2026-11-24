@@ -1,0 +1,18 @@
+overall:
+  default: >
+    In {year}, a total of {total_cases} {event_case_label} of malignant tumors were reported in {area_name}, including {male_cases} in {sex_male} and {female_cases} in {sex_female}.
+    {area_urban_full_sentence} reported {urban_cases} cases, accounting for {urban_prop}%; {area_rural_full_sentence} reported {rural_cases} cases, accounting for {rural_prop}%.
+    The cancer {event_rate_label} rate in {area_name} was {total_cr} {phrase_per_100000} ({male_cr} {phrase_per_100000} in {sex_male} and {female_cr} {phrase_per_100000} in {sex_female}), with an ASR China of {total_asr_cn2000} {phrase_per_100000}, an ASR World of {total_asr_wld85} {phrase_per_100000}, and a cumulative rate among subjects aged 0 to 74 years of {total_cumur}%.
+    The cancer {event_rate_label} rate in {area_urban_full} was {urban_cr} {phrase_per_100000} ({urban_male_cr} {phrase_per_100000} in {sex_male} and {urban_female_cr} {phrase_per_100000} in {sex_female}), with an ASR China of {urban_asr_cn2000} {phrase_per_100000}, an ASR World of {urban_asr_wld85} {phrase_per_100000}, and a cumulative rate of {urban_cumur}%;
+    the corresponding rate in {area_rural_full} was {rural_cr} {phrase_per_100000} ({rural_male_cr} {phrase_per_100000} in {sex_male} and {rural_female_cr} {phrase_per_100000} in {sex_female}), with an ASR China of {rural_asr_cn2000} {phrase_per_100000}, an ASR World of {rural_asr_wld85} {phrase_per_100000}, and a cumulative rate of {rural_cumur}%.
+    Compared with rural areas, {urban_rural_compare_text}.
+
+comparison:
+  all_urban_higher: >
+    the ASR China of cancer {event_noun} was higher in urban areas than in rural areas among males, females, and both sexes combined
+  all_rural_higher: >
+    the ASR China of cancer {event_noun} was higher in rural areas than in urban areas among males, females, and both sexes combined
+  all_similar: >
+    the ASR China of cancer {event_noun} was similar between urban and rural areas among males, females, and both sexes combined
+  mixed: >
+    the ASR China of cancer {event_noun} varied between urban and rural areas across sex strata

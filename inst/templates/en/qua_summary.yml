@@ -1,0 +1,23 @@
+overall:
+  default: >
+    In {year}, the proportion of morphologically verified cases (MV%) for {cancer_name_lower} in the cancer registration areas of {area_name} was {total_mv}%, the mortality-to-incidence ratio (M:I) was {total_mi}, and the proportion of death-certificate-only cases (DCO%) was {total_dco}%.
+    The proportion of cases with unknown primary site was {total_ub}%, and the proportion with unknown subsite was {total_sub}%.
+    Among males, MV% was {male_mv}%, M:I was {male_mi}, and DCO% was {male_dco}%; among females, MV% was {female_mv}%, M:I was {female_mi}, and DCO% was {female_dco}%.
+    In urban areas, MV% was {urban_mv}%, M:I was {urban_mi}, and DCO% was {urban_dco}%; in rural areas, MV% was {rural_mv}%, M:I was {rural_mi}, and DCO% was {rural_dco}%.
+    {mv_compare_text}, and {mi_compare_text}.
+
+comparison:
+  mv:
+    urban_higher: >
+      MV% was higher in urban areas than in rural areas
+    rural_higher: >
+      MV% was higher in rural areas than in urban areas
+    similar: >
+      MV% was similar between urban and rural areas
+  mi:
+    urban_higher: >
+      M:I was higher in urban areas than in rural areas
+    rural_higher: >
+      M:I was lower in urban areas than in rural areas
+    similar: >
+      M:I was similar between urban and rural areas

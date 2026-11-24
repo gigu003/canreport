@@ -1,0 +1,66 @@
+event_type:
+  incidence:
+    noun: "incidence"
+    case_label: "new cases"
+    crude_rate_label: "crude incidence rate"
+    rate_label: "incidence"
+    rank_phrase: "most common cancer"
+    cause_label: "new cancer cases"
+    total_case_phrase: "new cases of"
+    total_case_suffix: " were diagnosed"
+  mortality:
+    noun: "mortality"
+    case_label: "deaths"
+    crude_rate_label: "crude mortality rate"
+    rate_label: "mortality"
+    rank_phrase: "most common cause of cancer deaths"
+    cause_label: "cancer deaths"
+    total_case_phrase: "cases died of"
+    total_case_suffix: ""
+
+sex:
+  male: "males"
+  female: "females"
+  male_higher: "higher in males than in females"
+  female_higher: "higher in females than in males"
+  similar: "similar between males and females"
+
+area:
+  urban: "urban areas"
+  rural: "rural areas"
+  urban_full: "urban areas"
+  rural_full: "rural areas"
+  urban_higher: "higher in urban areas than in rural areas"
+  rural_higher: "higher in rural areas than in urban areas"
+  similar: "similar between urban and rural areas"
+
+phrase:
+  rank: "rank"
+  registration_area: "the registration area of"
+  all_cancers: "all cancers"
+  per_100000: "per 100,000 population"
+  asr_china: "ASR China"
+  asr_world: "ASR World"
+  standardized: "standardized"
+  cumulative_0_74: "cumulative"
+  area_count_suffix: ""
+  cancer_registration_areas: "cancer registration areas"
+  cancer_registration_area_prefix: true
+  age_specific_prefix: "age-specific"
+  age_unit: "years"
+  age_and_over_suffix: "+ years"
+
+list:
+  comma: ", "
+  ideographic_comma: ", "
+  and: "and"
+  followed_by: ", followed by "
+
+punctuation:
+  full_stop: "."
+  semicolon: ";"
+  paren_open: "("
+  paren_close: ")"
+
+spectrum:
+  exclude_cancer_pattern: "^all cancers$|^all malignant"

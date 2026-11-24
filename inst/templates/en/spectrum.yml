@@ -1,0 +1,7 @@
+overall:
+  total: >
+    In {year}, {top_cancer} ranked first for cancer {event_noun} in {phrase_registration_area} {area_name}, China, followed by {other_cancers}. The top {n} cancers accounted for {top_prop}% of all {event_cause_label}.
+  male: >
+    Among males, {top_cancer} ranked first, followed by {other_cancers}; the top {n} cancers accounted for {top_prop}% of all {event_cause_label} among males.
+  female: >
+    Among females, {top_cancer} ranked first, followed by {other_cancers}; the top {n} cancers accounted for {top_prop}% of all {event_cause_label} among females.

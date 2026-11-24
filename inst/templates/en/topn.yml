@@ -1,0 +1,13 @@
+overall:
+  default: >
+    Among the {area_scope}, the {cancer_name_lower} {event_noun} of {phrase_asr_china} was the highest in {total_area_names}, with values of {total_rate_values}.
+    For {sex_male}, the {phrase_asr_china} was highest in {male_area_names}, with values of {male_rate_values}.
+    For {sex_female}, the {phrase_asr_china} was highest in {female_area_names}, with values of {female_rate_values}.
+  default_no_scope: >
+    The {cancer_name_lower} {event_noun} of {phrase_asr_china} was the highest in {total_area_names}, with values of {total_rate_values}.
+    For {sex_male}, the {phrase_asr_china} was highest in {male_area_names}, with values of {male_rate_values}.
+    For {sex_female}, the {phrase_asr_china} was highest in {female_area_names}, with values of {female_rate_values}.
+  sex_specific: >
+    Among the {area_scope}, the {cancer_name_lower} {event_noun} of {phrase_asr_china} was the highest in {total_area_names}, with values of {total_rate_values}.
+  sex_specific_no_scope: >
+    The {cancer_name_lower} {event_noun} of {phrase_asr_china} was the highest in {total_area_names}, with values of {total_rate_values}.

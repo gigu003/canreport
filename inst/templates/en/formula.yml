@@ -1,0 +1,155 @@
+average_population:
+  title: "Average annual population"
+  label: "eq-average-population"
+  description: >
+    The average annual population is the denominator used for population-based rates such as cancer incidence and mortality rates. It approximates the population at risk during the observation period.
+    In cancer registry reports, when mid-year population data are not available, the arithmetic mean of the population at the beginning and end of the year is commonly used.
+  equation: >
+    $$
+    P = \frac{P_s + P_e}{2}
+    $$ {#eq-average-population}
+  note: >
+    where P denotes the average annual population, P_s denotes the population at the beginning of the year, and P_e denotes the population at the end of the year. If available, the mid-year population can be used as the denominator.
+  interpretation: >
+    The accuracy and consistency of population denominators directly affect the stability and comparability of rate estimates, particularly in areas with substantial migration or rapid demographic changes.
+
+crude_rate:
+  title: "Crude incidence or mortality rate"
+  label: "eq-crude-rate"
+  description: >
+    The crude rate describes the frequency of new cancer cases or cancer deaths in a defined population during a specified period. It is a fundamental measure of the observed cancer burden in the population.
+    For incident cases, the measure is the crude incidence rate; for deaths, it is the crude mortality rate.
+  equation: >
+    $$
+    R = \frac{N}{P} \times 100,000
+    $$ {#eq-crude-rate}
+  note: >
+    where R denotes the crude incidence or mortality rate, N denotes the number of incident cases or deaths during the observation period, and P denotes the average annual population. The rate is usually expressed per 100,000 population.
+  interpretation: >
+    Crude rates reflect the actual observed burden in the target population but are strongly influenced by the age structure of the population. Comparisons across areas, periods, or populations should therefore be interpreted together with age-standardized rates.
+
+age_specific_rate:
+  title: "Age-specific incidence or mortality rate"
+  label: "eq-age-specific-rate"
+  description: >
+    Age-specific rates describe the frequency of new cancer cases or cancer deaths within a specific age group. They are essential for examining age patterns and identifying high-risk age groups.
+  equation: >
+    $$
+    R_i = \frac{N_i}{P_i} \times 100,000
+    $$ {#eq-age-specific-rate}
+  note: >
+    where R_i denotes the age-specific incidence or mortality rate in age group i, N_i denotes the number of incident cases or deaths in that age group, and P_i denotes the corresponding average annual population.
+  interpretation: >
+    Age-specific rates show how cancer risk varies with age and provide the basis for calculating age-standardized rates, cumulative rates, and truncated rates.
+
+age_standardized_rate:
+  title: "Age-standardized rate"
+  label: "eq-age-standardized-rate"
+  description: >
+    The age-standardized rate is used to remove the influence of differences in age structure when comparing incidence or mortality rates across populations, areas, or time periods. Common standard populations include the Chinese standard population and Segi's world standard population.
+  equation: >
+    $$
+    ASR = \frac{\sum_i R_i W_i}{\sum_i W_i}
+    $$ {#eq-age-standardized-rate}
+  note: >
+    where ASR denotes the age-standardized incidence or mortality rate, R_i denotes the age-specific rate in age group i, and W_i denotes the standard population count or weight for that age group.
+  interpretation: >
+    The age-standardized rate is a summary measure for comparison and should not be interpreted as the observed rate in the target population. The actual cancer burden should be described using case counts and crude rates, whereas comparisons of risk should rely on standardized rates.
+
+proportion:
+  title: "Proportion"
+  label: "eq-proportion"
+  description: >
+    A proportion describes the relative contribution of a specific cancer site, sex, age group, or other category to the total number of cases or deaths. It is commonly used to summarize the cancer incidence or mortality spectrum.
+  equation: >
+    $$
+    Prop_c = \frac{N_c}{\sum_c N_c} \times 100\%
+    $$ {#eq-proportion}
+  note: >
+    where Prop_c denotes the proportion for category c, N_c denotes the number of cases or deaths in that category, and \sum_c N_c denotes the total number of cases or deaths across all categories.
+  interpretation: >
+    Proportions reflect composition rather than risk. Changes in proportions should be interpreted together with corresponding rates and demographic changes.
+
+cumulative_rate:
+  title: "Cumulative rate"
+  label: "eq-cumulative-rate"
+  description: >
+    The cumulative rate describes the accumulated occurrence of cancer incidence or mortality from birth to a specified age. Cancer registry reports commonly present cumulative incidence or mortality rates from 0 to 74 years of age.
+  equation: >
+    $$
+    CR_{0-a} = \sum_i \frac{R_i}{100,000} \times w_i \times 100\%
+    $$ {#eq-cumulative-rate}
+  note: >
+    where CR_{0-a} denotes the cumulative rate from birth to age a, R_i denotes the age-specific rate expressed per 100,000 population, and w_i denotes the width of age group i.
+  interpretation: >
+    When age-specific rates are low, the cumulative rate can be approximately interpreted as the probability of developing or dying from cancer before a specified age. It does not require a standard population and is useful for comparing cumulative risk across populations.
+
+truncated_rate:
+  title: "Truncated rate"
+  label: "eq-truncated-rate"
+  description: >
+    The truncated rate is an age-standardized rate calculated within a specified age range, commonly 35 to 64 years for cancer statistics. It is used to compare incidence or mortality levels in selected age groups.
+  equation: >
+    $$
+    TR_{a-b} = \frac{\sum_{i=a}^{b} R_i W_i}{\sum_{i=a}^{b} W_i}
+    $$ {#eq-truncated-rate}
+  note: >
+    where TR_{a-b} denotes the truncated rate from age a to age b, R_i denotes the age-specific rate, and W_i denotes the corresponding standard population count or weight.
+  interpretation: >
+    Truncated rates can reduce the influence of unstable rates in very young or very old age groups and are useful for comparisons focused on selected working-age or high-risk age ranges.
+
+mi_ratio:
+  title: "Mortality-to-incidence ratio"
+  label: "eq-mi-ratio"
+  description: >
+    The mortality-to-incidence ratio (M:I) is the ratio of the number of cancer deaths to the number of incident cancer cases in the same period. It is commonly used in cancer registry quality assessment and may also serve as an indirect indicator of prognosis and access to diagnosis and treatment.
+  equation: >
+    $$
+    M:I = \frac{D}{I}
+    $$ {#eq-mi-ratio}
+  note: >
+    where M:I denotes the mortality-to-incidence ratio, D denotes the number of cancer deaths, and I denotes the number of incident cancer cases.
+  interpretation: >
+    An unusually high M:I ratio may suggest incomplete incidence registration or under-ascertainment of cases, whereas an unusually low value may indicate incomplete mortality data or coding problems. Interpretation should consider cancer prognosis and data completeness.
+
+mv_percent:
+  title: "Microscopic verification percentage"
+  label: "eq-mv-percent"
+  description: >
+    The microscopic verification percentage (MV%) is the proportion of registered cases confirmed by histology or cytology. It is an important indicator of the validity of diagnostic information in cancer registry data.
+  equation: >
+    $$
+    MV\% = \frac{N_{MV}}{N} \times 100\%
+    $$ {#eq-mv-percent}
+  note: >
+    where MV% denotes the microscopic verification percentage, N_{MV} denotes the number of histologically or cytologically verified cases, and N denotes the total number of registered cases.
+  interpretation: >
+    A high MV% generally indicates reliable diagnostic confirmation, but an excessively high value may suggest under-ascertainment of clinically diagnosed or death-certificate-initiated cases. MV% should be interpreted together with DCO%, M:I, and the number of information sources.
+
+dco_percent:
+  title: "Death-certificate-only percentage"
+  label: "eq-dco-percent"
+  description: >
+    The death-certificate-only percentage (DCO%) is the proportion of registered cases identified only from death certificates, without corresponding information from incidence registration before death. It is a key indicator of completeness in cancer incidence registration.
+  equation: >
+    $$
+    DCO\% = \frac{N_{DCO}}{N} \times 100\%
+    $$ {#eq-dco-percent}
+  note: >
+    where DCO% denotes the death-certificate-only percentage, N_{DCO} denotes the number of death-certificate-only cases, and N denotes the total number of registered cases.
+  interpretation: >
+    A high DCO% usually suggests incomplete incidence case ascertainment or insufficient trace-back procedures. A low DCO% generally indicates better completeness, but it should still be evaluated together with the quality of mortality data.
+
+unknown_percent:
+  title: "Unknown primary site percentage"
+  label: "eq-unknown-percent"
+  description: >
+    The unknown primary site percentage is the proportion of registered cases with an unspecified or unknown primary site. It is used to assess the completeness of diagnostic information and the quality of cancer site coding.
+  equation: >
+    $$
+    UK\% = \frac{N_{unknown}}{N} \times 100\%
+    $$ {#eq-unknown-percent}
+  note: >
+    where UK% denotes the unknown primary site percentage, N_{unknown} denotes the number of cases with an unknown primary site, and N denotes the total number of registered cases.
+  interpretation: >
+    A high percentage of unknown primary site cases can affect cancer spectrum analyses and site-specific rate estimates, indicating the need to review diagnostic information, medical record abstraction, and coding quality.

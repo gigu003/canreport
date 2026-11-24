@@ -1,0 +1,7 @@
+^data-raw$
+^\.clinerules$
+^\.DS_Store$
+^tests/\.DS_Store$
+^tests/testthat/testthat-problems\.rds$
+^README\.Rmd$
+^README_files$

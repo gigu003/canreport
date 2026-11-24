@@ -1,0 +1,18 @@
+overall:
+  default: >
+    {area_name}肿瘤登记地区{year}年报告恶性肿瘤{event_case_label}数合计{total_cases}例，其中{sex_male}{male_cases}例，{sex_female}{female_cases}例。
+    {area_urban_full}上报{urban_cases}例，占{urban_prop}%；{area_rural_full}报告{rural_cases}例，占{rural_prop}%。
+    {area_name}肿瘤登记地区恶性肿瘤{event_rate_label}为{total_cr}{phrase_per_100000}（{sex_male}{male_cr}{phrase_per_100000}，{sex_female}{female_cr}{phrase_per_100000}），中标率{total_asr_cn2000}{phrase_per_100000}，世标率{total_asr_wld85}{phrase_per_100000}，累积率（0-74岁）{total_cumur}%。
+    {area_urban_full}{event_rate_label}为{urban_cr}{phrase_per_100000}（{sex_male}{urban_male_cr}{phrase_per_100000}，{sex_female}{urban_female_cr}{phrase_per_100000}），中标率{urban_asr_cn2000}{phrase_per_100000}，世标率{urban_asr_wld85}{phrase_per_100000}，累积率（0-74岁）为{urban_cumur}%；
+    {area_rural_full}{event_rate_label}为{rural_cr}{phrase_per_100000}（{sex_male}{rural_male_cr}{phrase_per_100000}，{sex_female}{rural_female_cr}{phrase_per_100000}），中标率{rural_asr_cn2000}{phrase_per_100000}，世标率{rural_asr_wld85}{phrase_per_100000}，累积率（0-74岁）为{rural_cumur}%。
+    城市与农村相比，{urban_rural_compare_text}。
+
+comparison:
+  all_urban_higher: >
+    城市地区男性、女性及男女合计中标{event_noun}率均高于农村地区
+  all_rural_higher: >
+    农村地区男性、女性及男女合计中标{event_noun}率均高于城市地区
+  all_similar: >
+    城市地区和农村地区男性、女性及男女合计中标{event_noun}率均接近
+  mixed: >
+    城市地区和农村地区不同性别中标{event_noun}率高低不一
