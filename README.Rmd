@@ -5,6 +5,8 @@ output: github_document
 <!-- README.md is generated from README.Rmd. Please edit README.Rmd instead. -->
 
 ```{r, include = FALSE}
+library(canreport)
+
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
@@ -19,81 +21,28 @@ knitr::opts_chunk$set(
 
 The package is designed to work with structured report data, such as output from `canregtools`, and supports reproducible text generation workflows for `knitr` and R Markdown reports. It helps produce standardized, consistent, and bilingual cancer registry report text from statistical results.
 
-## Features
-
-- Generate overview paragraphs for cancer incidence and mortality indicators.
-- Describe top-ranked registry areas by standardized rates.
-- Describe age-specific rate patterns and subgroup comparisons.
-- Summarize population coverage, cancer spectrum, subsite composition, and data
-  quality indicators.
-- Support Chinese and English report text through external templates.
-- Keep data processing, text templates, and language resources separated.
-- Return either rendered text or structured values for selected core functions.
-
 ## Installation
 
-You can install the development version from a local checkout:
+canreport requires R 4.1 or later. Install the development version from GitHub:
 
 ```{r install, eval = FALSE}
-# From the package root directory
-install.packages(".", repos = NULL, type = "source")
+# install.packages("remotes")
+remotes::install_github("gigu003/canreport")
 ```
 
-If you use `devtools`:
+From a local source checkout, run `devtools::install()` in the package root.
 
-```{r install-devtools, eval = FALSE}
-devtools::install()
-```
+## Quick start
 
-## Example data
+Use the bundled example tables to generate report text and inspect the
+values used in each paragraph.
 
-The package includes example datasets:
+### Generate an incidence overview
 
-- `asr`: an age-standardized rate table generated from a `canregtools::create_asr()` workflow and labelled by `canregtools::add_labels()`.
-- `agerate`: an age-specific rate table generated from a `canregtools::create_age_rate()` workflow and labelled by `canregtools::add_labels()`.
-- `cr_pop`: an example population table.
-- `cr_quality`: an example cancer registry quality indicator table.
-- `site_icd10` and `site_morp`: example subsite and morphology count tables.
-
-## Usage
-
-```{r overview-example, eval = FALSE}
+```{r overview-example}
 library(canreport)
 
-cr_overview(
-  asr,
-  cancer = "Breast cancer",
-  event_type = "incidence",
-  area = 410000,
-  lang = "en"
-)
-```
-
-```{r topn-example, eval = FALSE}
-cr_topn(
-  asr,
-  cancer = "Esophagus cancer",
-  event_type = "incidence",
-  area_scope = "urban cancer registration areas",
-  lang = "en"
-)
-```
-
-```{r age-pattern-example, eval = FALSE}
-cr_age_pattern(
-  agerate,
-  cancer = "Trachea, Bronchus & Lung cancer",
-  event_type = "mortality",
-  area = 410000,
-  lang = "en"
-)
-```
-
-Selected core functions can also return structured values for checking the
-numbers behind the rendered paragraph:
-
-```{r structured-output-example, eval = FALSE}
-cr_overview(
+overview <- cr_overview(
   asr,
   cancer = "Breast cancer",
   event_type = "incidence",
@@ -101,44 +50,69 @@ cr_overview(
   lang = "en",
   output = "both"
 )
+
+cat(overview$text)
 ```
 
-## Main functions
+`output = "both"` returns the paragraph in `text`, a one-row data frame in
+`data`, and a named list of template values in `values`. Select the fields
+you want to review alongside the narrative:
 
-| Function | Description |
-| --- | --- |
-| `cr_coverage()` | Describe population coverage for cancer registration areas. |
-| `cr_overview()` | Generate an overview paragraph for one cancer and one event type from an ASR table. |
-| `cr_overview_total()` | Generate an overview paragraph for all cancers in one registration area. |
-| `cr_topn()` | Describe the top N registry areas by a selected standardized rate. |
-| `cr_age_pattern()` | Describe age-specific rate patterns and subgroup comparisons. |
-| `cr_age_pattern_total()` | Describe overall age-specific patterns for all cancers. |
-| `cr_spectrum()` | Summarize leading cancers in the cancer spectrum. |
-| `cr_subsite()` | Summarize cancer counts by ICD-10 subsite or morphology group. |
-| `cr_qua_summary()` | Summarize cancer registry data quality indicators. |
+```{r structured-output-example}
+overview$data[c("year", "no_cases", "cr", "asr_cn2000", "rank")]
+```
 
-## Structured output
+For `cr_overview()`, `cr_overview_total()`, and `cr_qua_summary()`,
+`output = "text"` is the default and `output = "data"` returns the one-row
+table alone.
 
-The default output of text generators remains a single character string. For
-selected core functions, `output` can be used to inspect the values used for
-template rendering:
+### Describe an age-specific incidence pattern
 
-- `output = "text"`: return the rendered paragraph.
-- `output = "data"`: return a one-row data frame of template values.
-- `output = "both"`: return a list with `text`, `data`, and `values`.
+```{r age-pattern-example}
+paragraph <- cr_age_pattern(
+  agerate,
+  cancer = "Lung cancer",
+  event_type = "incidence",
+  area = 410000,
+  lang = "zh"
+)
+cat(paragraph)
+```
 
-Currently this option is available for `cr_overview()`,
-`cr_overview_total()`, and `cr_qua_summary()`.
+To include the paragraph in R Markdown, put `cat(paragraph)` in a chunk with
+`results = "asis"`. In Quarto, use the chunk option `#| output: asis`.
 
-## Template-based reporting
+## Choose an input table and function
 
-Narrative text is generated from templates and language dictionaries:
+| Example table | What it contains | Report functions |
+| --- | --- | --- |
+| `asr` | Case or death counts, crude and age-standardized rates, and ranks | `cr_overview()`, `cr_overview_total()`, `cr_topn()`, `cr_spectrum()` |
+| `agerate` | Counts, denominators, and rates by age group | `cr_age_pattern()`, `cr_age_pattern_total()` |
+| `cr_pop` | Population counts by area, sex, and age group | `cr_coverage()` |
+| `cr_quality` | Registry quality indicators such as MV%, DCO%, and M/I | `cr_qua_summary()` |
+| `site_icd10`, `site_morp` | Counts by ICD-10 subsite or morphology group | `cr_subsite()` |
 
-- Templates: `inst/templates/zh/` and `inst/templates/en/`
-- Language dictionaries: `inst/lang/zh.yml` and `inst/lang/en.yml`
-- R functions: data validation, filtering, calculation, formatting, and template rendering
+For your own data, prepare one analysis year and one event type per input
+table before generating a paragraph. Match the columns and strata in the
+corresponding example table. For instance, prepare an ASR table with
+`canregtools::create_asr()` and `canregtools::add_labels()`. Overview
+paragraphs use the main area's total, male, and female rows and the urban
+and rural comparison rows. Use `area_roles` if your urban and rural codes
+differ from the defaults of `910000` and `920000`.
 
-This structure keeps the package easier to maintain when report wording needs to be revised or new languages/templates are added.
+Use `lang = "zh"` for Chinese and `lang = "en"` for English in the
+narrative functions. Set `event_type` to match the input table's
+incidence or mortality statistics. See the help page for each function
+for the required columns and available arguments, for example
+`?canreport::cr_overview`.
+
+## Report templates and chapters
+
+Narrative templates live in [`inst/templates/`](inst/templates/) and share
+labels and wording from [`inst/lang/`](inst/lang/). Use
+`cr_chapters("methods", lang = "en")` to retrieve the built-in methods
+chapter as Markdown source. It returns the chapter with its embedded
+code chunks, which run when the report containing them is rendered.
 
 ## License
 
